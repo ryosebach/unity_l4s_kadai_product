@@ -6,14 +6,20 @@ using UniRx.Triggers;
 
 namespace Niiives {
 	public class KeyBorardInput : MonoBehaviour, IPlayerInput {
-		public IObservable<Const.PlayerInput> OnMoveInputObserbable {
-			get {
-				return onPlyaerInputSubject.AsObservable();
-			}
-		}
 
+		/// <summary>
+		/// プレイヤーからの入力をObservableに流すためのSubject
+		/// </summary>
 		private Subject<Const.PlayerInput> onPlyaerInputSubject = new Subject<Const.PlayerInput>();
 
+		/// <summary>
+		/// 入力を流すためのObservable.
+		/// IPlayerInputをGetComponentし，このObservableを監視することで動けるように
+		/// </summary>
+		/// <value>The on move input obserbable.</value>
+		public IObservable<Const.PlayerInput> OnMoveInputObserbable {
+			get { return onPlyaerInputSubject.AsObservable(); }
+		}
 
 		void Start() {
 			this.UpdateAsObservable()
