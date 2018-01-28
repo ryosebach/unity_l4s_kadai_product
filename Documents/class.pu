@@ -1,0 +1,94 @@
+class Player {
+
+}
+
+class PlayerSkill {
+
+}
+
+interface IPlayerInput {
+  Observable<PlayerInput> OnPlayerInputObservable
+}
+
+
+class PlayerMove {
+
+}
+
+class PlayerAttack {
+
+}
+
+class PlayerHit {
+
+}
+
+class KeyboardInput {
+
+}
+
+interface IPlayerShot {
+
+}
+
+class PlayerShot1 {
+
+}
+
+class PlayerDamage {
+
+}
+
+
+KeyboardInput ..|> IPlayerInput
+PlayerMove <-- IPlayerInput
+
+class Enemy {
+
+}
+
+class EnemyAttack {
+
+}
+
+class EnemyHit {
+
+}
+
+interface IBullet {
+  BulletType bulletType
+}
+
+interface IEnemyShot {
+
+}
+
+class EnemyShot1{
+
+}
+
+class EnemyDamage {
+
+}
+
+IBullet -up- PlayerHit
+IBullet -up- EnemyHit
+
+PlayerAttack --> IPlayerShot
+IPlayerShot <|.. PlayerShot1
+PlayerShot1 --> Bullet
+Bullet ..|> IBullet
+PlayerHit -u-> PlayerDamage
+PlayerDamage -u-> Player
+
+EnemyAttack --> IEnemyShot
+IEnemyShot <|.. EnemyShot1
+EnemyShot1 --> Bullet
+EnemyDamage <-- EnemyHit
+EnemyDamage -u-> Enemy
+
+EnemyAttack -up- Enemy
+PlayerAttack -up- Player
+
+Player -up- PlayerSkill
+Player -- PlayerMove
