@@ -4,6 +4,9 @@
 
 # 仕様
 
+## クラス図
+![クラス図](https://raw.githubusercontent.com/ryosebach/unity_l4s_kadai_product/master/Documents/img/class.png)
+
 ## 基本ルール
 
 - 飛んでくる弾丸に当たらないように移動
