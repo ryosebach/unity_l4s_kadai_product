@@ -7,6 +7,7 @@
 			Left,
 			Down,
 			Right,
+			Space,
 		}
 	}
 

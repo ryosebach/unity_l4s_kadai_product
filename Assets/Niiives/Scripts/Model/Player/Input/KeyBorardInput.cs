@@ -23,20 +23,24 @@ namespace Niiives {
 
 		void Start() {
 			this.UpdateAsObservable()
-				.Where(_ => Input.GetKeyDown(KeyCode.DownArrow))
+				.Where(_ => Input.GetKey(KeyCode.DownArrow))
 				.Select(_ => Const.PlayerInput.Down)
 				.Subscribe(onPlyaerInputSubject);
 			this.UpdateAsObservable()
-				.Where(_ => Input.GetKeyDown(KeyCode.RightArrow))
+				.Where(_ => Input.GetKey(KeyCode.RightArrow))
 				.Select(_ => Const.PlayerInput.Right)
 				.Subscribe(onPlyaerInputSubject);
 			this.UpdateAsObservable()
-				.Where(_ => Input.GetKeyDown(KeyCode.LeftArrow))
+				.Where(_ => Input.GetKey(KeyCode.LeftArrow))
 				.Select(_ => Const.PlayerInput.Left)
 				.Subscribe(onPlyaerInputSubject);
 			this.UpdateAsObservable()
-				.Where(_ => Input.GetKeyDown(KeyCode.UpArrow))
+				.Where(_ => Input.GetKey(KeyCode.UpArrow))
 				.Select(_ => Const.PlayerInput.Up)
+				.Subscribe(onPlyaerInputSubject);
+			this.UpdateAsObservable()
+				.Where(_ => Input.GetKey(KeyCode.Space))
+				.Select(_ => Const.PlayerInput.Space)
 				.Subscribe(onPlyaerInputSubject);
 		}
 	}
