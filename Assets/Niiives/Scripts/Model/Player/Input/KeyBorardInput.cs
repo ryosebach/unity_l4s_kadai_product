@@ -25,11 +25,13 @@ namespace Niiives {
 			this.UpdateAsObservable()
 				.Where(_ => Input.GetKey(KeyCode.DownArrow))
 				.Select(_ => Const.PlayerInput.Down)
-				.Subscribe(onPlyaerInputSubject);
+				.Subscribe(onPlyaerInputSubject)
+				.AddTo(this.gameObject);
 			this.UpdateAsObservable()
 				.Where(_ => Input.GetKey(KeyCode.RightArrow))
 				.Select(_ => Const.PlayerInput.Right)
-				.Subscribe(onPlyaerInputSubject);
+				.Subscribe(onPlyaerInputSubject)
+				.AddTo(this.gameObject);
 			this.UpdateAsObservable()
 				.Where(_ => Input.GetKey(KeyCode.LeftArrow))
 				.Select(_ => Const.PlayerInput.Left)
@@ -37,11 +39,13 @@ namespace Niiives {
 			this.UpdateAsObservable()
 				.Where(_ => Input.GetKey(KeyCode.UpArrow))
 				.Select(_ => Const.PlayerInput.Up)
-				.Subscribe(onPlyaerInputSubject);
+				.Subscribe(onPlyaerInputSubject)
+				.AddTo(this.gameObject);
 			this.UpdateAsObservable()
 				.Where(_ => Input.GetKey(KeyCode.Space))
 				.Select(_ => Const.PlayerInput.Space)
-				.Subscribe(onPlyaerInputSubject);
+				.Subscribe(onPlyaerInputSubject)
+				.AddTo(this.gameObject);
 		}
 	}
 }
