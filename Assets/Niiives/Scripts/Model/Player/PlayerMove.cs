@@ -11,7 +11,6 @@ namespace Niiives {
 		void Start() {
 			var input = GetComponent<IPlayerInput>();
 			var controller = GetComponent<AeroplaneController>();
-			print(controller);
 
 			this.UpdateAsObservable()
 				.Subscribe(_ => controller.Move(0, 0, 0, Player.Instance.moveSpeed.Value, false));
