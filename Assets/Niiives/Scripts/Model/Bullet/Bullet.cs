@@ -13,6 +13,22 @@ namespace Niiives {
 		public Func<float, float> yMove { get; set; }
 		public Func<float, float> zMove { get; set; }
 
+		private float damageVal;
+		public float DamegeVal {
+			get {
+				return damageVal;
+			}
+			set {
+				damageVal = value;
+			}
+		}
+
+		public GameObject bulletObj {
+			get {
+				return this.gameObject;
+			}
+		}
+
 		float timer;
 		void Start() {
 			this.UpdateAsObservable()
