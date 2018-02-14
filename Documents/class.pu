@@ -35,6 +35,30 @@ class PlayerShot1 {
 
 }
 
+class PlayerAim{
+
+}
+
+interface IPlayerAim{
+
+}
+
+interface IPlayerTargeting {
+
+}
+
+class PlayerTargeting {
+
+}
+
+IPlayerAim ..|> PlayerAim
+
+PlayerShot1 -u-> IPlayerAim
+
+PlayerAim -u-> IPlayerTargeting
+
+IPlayerTargeting ..|> PlayerTargeting
+
 class PlayerDamage {
 
 }
