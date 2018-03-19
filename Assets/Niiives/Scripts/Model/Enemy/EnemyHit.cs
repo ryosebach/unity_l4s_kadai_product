@@ -12,7 +12,6 @@ namespace Niiives {
 				.Select(x => x.gameObject.GetComponent<IBullet>())
 				.Where(x => x != null)
 				.Subscribe(iBullet => {
-					Debug.Log("hit");
 					var iEnemy = GetComponent<IEnemy>();
 					iEnemy.HP -= iBullet.DamegeVal;
 					Destroy(iBullet.bulletObj);
