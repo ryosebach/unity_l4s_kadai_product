@@ -29,7 +29,6 @@ namespace Niiives {
 						   .Subscribe(targetObj => {
 							   if (targetObj) {
 								   targetTrans = targetObj.transform;
-								   Debug.Log(targetObj.name);
 								   lockOnTimer = 0;
 								   isAimed = false;
 							   } else {

@@ -8,7 +8,6 @@ namespace Niiives {
 	public class EnemyHit : MonoBehaviour {
 		private void Start() {
 			this.OnTriggerEnterAsObservable()
-				.Do(_ => Debug.Log("hoge"))
 				.Select(x => x.gameObject.GetComponent<IBullet>())
 				.Where(x => x != null)
 				.Subscribe(iBullet => {
